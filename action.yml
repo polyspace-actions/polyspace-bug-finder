@@ -2,7 +2,7 @@
 
 name: 'polyspace-bug-finder'
 author: 'MathWorks'
-description: 'Run a Polyspace Bug Finder Server analysis and upload results to Polyspace Access (optional). The analysis generates a SARIF results file.'
+description: 'Run a Polyspace Bug Finder Server analysis, save results to a SARIF file, and optionally upload to Polyspace Access.'
 inputs:
     polyspace-installation-folder:
       description: 'Polyspace installation folder path. 
