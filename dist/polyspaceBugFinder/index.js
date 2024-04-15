@@ -10143,7 +10143,7 @@ exports.integrationAnalysis = integrationAnalysis;
 
 "use strict";
 
-// Copyright 2023 The MathWorks, Inc.
+// Copyright 2023-2024 The MathWorks, Inc.
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -10158,7 +10158,7 @@ exports.isPolyspaceCallableAndRightVersion = exports.getTargetVersion = void 0;
 const spawnProcess_1 = __nccwpck_require__(3989);
 const getCwd_1 = __nccwpck_require__(4209);
 function getTargetVersion() {
-    return 'R2023b';
+    return 'R2024a';
 }
 exports.getTargetVersion = getTargetVersion;
 // and matches its output to get the current polyspace version
