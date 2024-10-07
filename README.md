@@ -25,7 +25,7 @@ jobs:
     - name: Generate compilation database
       uses: cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON .
     - name: Analyze
-      uses: polyspace-actions/polyspace-bug-finder@24.1.0
+      uses: polyspace-actions/polyspace-bug-finder@24.2.0
       with:
         compilation-database-file: compile_commands.json
         checkers-file: checkers.xml
@@ -55,7 +55,7 @@ jobs:
     - name: Generate compilation database
       uses: cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON .
     - name: Analyze pull request
-      uses: polyspace-actions/polyspace-bug-finder@24.1.0
+      uses: polyspace-actions/polyspace-bug-finder@24.2.0
       with:
         polyspace-installation-folder: /opt/Polyspace
         compilation-database-file: compile_commands.json
@@ -70,7 +70,7 @@ jobs:
 
 ## polyspace-bug-finder
 
-When you define your workflow in the `.github/workflows` folder of your repository, specify this action as `polyspace-actions/polyspace-bug-finder@24.1.0`.
+When you define your workflow in the `.github/workflows` folder of your repository, specify this action as `polyspace-actions/polyspace-bug-finder@24.2.0`.
 
 The action accepts these inputs. Unless otherwise specified, the inputs are optional.
 
@@ -78,7 +78,7 @@ The action accepts these inputs. Unless otherwise specified, the inputs are opti
 
 Input                     | Description
 ------------------------- | ---------------
-|`polyspace-installation-folder`| Polyspace installation folder path. If you add the path of the Polyspace executables to your `PATH` environment variable, you do not need to specify the installation folder path.<br>**Example:** `/usr/local/Polyspace/R2024a`|
+|`polyspace-installation-folder`| Polyspace installation folder path. If you add the path of the Polyspace executables to your `PATH` environment variable, you do not need to specify the installation folder path.<br>**Example:** `/usr/local/Polyspace/R2024b`|
 | `working-directory`|Working directory folder path. Specify the path relative to `GITHUB_WORKSPACE`. If you do not specify a working directory, Polyspace uses `GITHUB_WORKSPACE`.|
 
 #### **Configuration and Analysis Options**

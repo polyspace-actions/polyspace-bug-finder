@@ -556,8 +556,8 @@ class OidcClient {
             const res = yield httpclient
                 .getJson(id_token_url)
                 .catch(error => {
-                throw new Error(`Failed to get ID Token. \n 
-        Error Code : ${error.statusCode}\n 
+                throw new Error(`Failed to get ID Token. \n
+        Error Code : ${error.statusCode}\n
         Error Message: ${error.result.message}`);
             });
             const id_token = (_a = res.result) === null || _a === void 0 ? void 0 : _a.value;
@@ -10158,7 +10158,7 @@ exports.isPolyspaceCallableAndRightVersion = exports.getTargetVersion = void 0;
 const spawnProcess_1 = __nccwpck_require__(3989);
 const getCwd_1 = __nccwpck_require__(4209);
 function getTargetVersion() {
-    return 'R2024a';
+    return 'R2024b';
 }
 exports.getTargetVersion = getTargetVersion;
 // and matches its output to get the current polyspace version
@@ -10282,7 +10282,7 @@ exports.logWarning = logWarning;
 
 "use strict";
 
-// Copyright 2023 The MathWorks, Inc.
+// Copyright 2023-2024 The MathWorks, Inc.
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -10500,6 +10500,8 @@ exports.ResultsExportOptions = {
     RESOLVE_URI: 'show-resolved-uri',
     FILL_ALL_MSG_TEXT: 'fill-all-message-text',
     SHOW_ACCESS_LINK: 'show-access-link',
+    EXCLUDE_CODE_METRICS: 'exclude-code-metrics',
+    EXCLUDE_RESULTS_WITHOUT_LOCATION: 'exclude-results-without-location',
 };
 
 
@@ -10715,7 +10717,7 @@ exports.prepareConfigureOptions = prepareConfigureOptions;
 
 "use strict";
 
-// Copyright 2023 The MathWorks, Inc.
+// Copyright 2023-2024 The MathWorks, Inc.
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.prepareResultsExportCommands = void 0;
 const options_1 = __nccwpck_require__(7768);
@@ -10727,7 +10729,7 @@ function prepareResultsExportCommands(exportInputOptions, accessInputOptions) {
     const resultsExportOptions = [];
     resultsExportOptions.push(...[
         options_1.ResultsExportOptions.SARIF_OPTIONS_MODIFIER,
-        `${options_1.ResultsExportOptions.RESOLVE_URI},${options_1.ResultsExportOptions.FILL_ALL_MSG_TEXT},${options_1.ResultsExportOptions.SHOW_ACCESS_LINK}`
+        `${options_1.ResultsExportOptions.RESOLVE_URI},${options_1.ResultsExportOptions.FILL_ALL_MSG_TEXT},${options_1.ResultsExportOptions.SHOW_ACCESS_LINK},${options_1.ResultsExportOptions.EXCLUDE_CODE_METRICS},${options_1.ResultsExportOptions.EXCLUDE_RESULTS_WITHOUT_LOCATION}`
     ]);
     resultsExportOptions.push(...(0, options_1.getOptionPair)(options_1.ResultsExportOptions.FORMAT, options_1.ResultsExportOptions.JSON_SARIF));
     resultsExportOptions.push(...(0, options_1.getOptionPair)(options_1.ResultsExportOptions.OUTPUT_NAME, exportInputOptions.SarifOutputFile));
@@ -11260,7 +11262,7 @@ module.exports = JSON.parse('[[[0,44],"disallowed_STD3_valid"],[[45,46],"valid"]
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
-/******/ 	
+/******/
 /******/ 	// The require function
 /******/ 	function __nccwpck_require__(moduleId) {
 /******/ 		// Check if module is in cache
@@ -11274,7 +11276,7 @@ module.exports = JSON.parse('[[[0,44],"disallowed_STD3_valid"],[[45,46],"valid"]
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
-/******/ 	
+/******/
 /******/ 		// Execute the module function
 /******/ 		var threw = true;
 /******/ 		try {
@@ -11283,23 +11285,23 @@ module.exports = JSON.parse('[[[0,44],"disallowed_STD3_valid"],[[45,46],"valid"]
 /******/ 		} finally {
 /******/ 			if(threw) delete __webpack_module_cache__[moduleId];
 /******/ 		}
-/******/ 	
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/ 	
+/******/
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat */
-/******/ 	
+/******/
 /******/ 	if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";
-/******/ 	
+/******/
 /************************************************************************/
-/******/ 	
+/******/
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module is referenced by other modules so it can't be inlined
 /******/ 	var __webpack_exports__ = __nccwpck_require__(1496);
 /******/ 	module.exports = __webpack_exports__;
-/******/ 	
+/******/
 /******/ })()
 ;
